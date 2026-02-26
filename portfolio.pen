@@ -1,0 +1,587 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "XLLep",
+      "x": 0,
+      "y": 0,
+      "name": "Portfolio",
+      "width": 1440,
+      "fill": "#0f172a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "vv4Yu",
+          "name": "Header",
+          "width": 1440,
+          "height": 80,
+          "fill": "#1a2332",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "asu4Z",
+              "name": "logo",
+              "fill": "#00d9ff",
+              "content": "Ahmed",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "UGmh4",
+              "name": "nav",
+              "width": 400,
+              "height": 80,
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HVCTO",
+                  "name": "nav1",
+                  "fill": "#cbd5e1",
+                  "content": "Projects",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "xjmD9",
+                  "name": "nav2",
+                  "fill": "#cbd5e1",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "t2WGH",
+                  "name": "nav3",
+                  "fill": "#cbd5e1",
+                  "content": "Skills",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "EW4Ob",
+                  "name": "nav4",
+                  "fill": "#cbd5e1",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "e8RxO",
+          "name": "Hero",
+          "width": 1440,
+          "height": 550,
+          "fill": "#0f172a",
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "PXTjR",
+              "name": "heroTitle",
+              "fill": "#00d9ff",
+              "content": "Hi, I'm Ahmed",
+              "fontFamily": "Inter",
+              "fontSize": 52,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "djVat",
+              "name": "heroSub",
+              "fill": "#cbd5e1",
+              "content": "Full-Stack Developer & DevOps Engineer",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "7fAA5",
+              "name": "heroDesc",
+              "fill": "#94a3b8",
+              "content": "Building modern applications with MERN, TypeScript, Next.js, and DevOps",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RPqPO",
+          "name": "About",
+          "width": 1440,
+          "height": 300,
+          "fill": "#0f172a",
+          "layout": "vertical",
+          "gap": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "AW6L0",
+              "name": "aboutTitle",
+              "fill": "#00d9ff",
+              "content": "About Me",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "R7cXg",
+              "name": "aboutText",
+              "fill": "#cbd5e1",
+              "content": "Experienced full-stack developer with 5+ years building scalable applications. Specialized in MERN stack, TypeScript, Next.js, Docker, and Kubernetes.",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "W9NFb",
+          "name": "Skills",
+          "width": 1440,
+          "height": 400,
+          "fill": "#0f172a",
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "dmkhU",
+              "name": "skillsTitle",
+              "fill": "#00d9ff",
+              "content": "Skills",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "FLCUN",
+              "name": "skillsGrid",
+              "width": 1200,
+              "height": 300,
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Jlbh5",
+                  "name": "skillCard1",
+                  "width": 360,
+                  "height": 280,
+                  "fill": "#1a2332",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GmLrv",
+                      "name": "s1Icon",
+                      "content": "⚛️",
+                      "fontFamily": "Inter",
+                      "fontSize": 32,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NL3kE",
+                      "name": "s1Title",
+                      "fill": "#00d9ff",
+                      "content": "Frontend",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "0Ro20",
+                      "name": "s1Desc",
+                      "fill": "#cbd5e1",
+                      "content": "React, Next.js, TypeScript, Tailwind",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CDHwI",
+                  "name": "skillCard2",
+                  "width": 360,
+                  "height": 280,
+                  "fill": "#1a2332",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ioqzk",
+                      "name": "s2Icon",
+                      "content": "🚀",
+                      "fontFamily": "Inter",
+                      "fontSize": 32,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "aNTLX",
+                      "name": "s2Title",
+                      "fill": "#00d9ff",
+                      "content": "Backend",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "S95kJ",
+                      "name": "s2Desc",
+                      "fill": "#cbd5e1",
+                      "content": "Node.js, Express, MongoDB, PostgreSQL",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PQsI3",
+                  "name": "skillCard3",
+                  "width": 360,
+                  "height": 280,
+                  "fill": "#1a2332",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QEwCg",
+                      "name": "s3Icon",
+                      "content": "⚙️",
+                      "fontFamily": "Inter",
+                      "fontSize": 32,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "XXpr7",
+                      "name": "s3Title",
+                      "fill": "#00d9ff",
+                      "content": "DevOps",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wLpqI",
+                      "name": "s3Desc",
+                      "fill": "#cbd5e1",
+                      "content": "Docker, Kubernetes, CI/CD, AWS",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dz9Aq",
+          "name": "Projects",
+          "width": 1440,
+          "height": 900,
+          "fill": "#0f172a",
+          "layout": "vertical",
+          "gap": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "U1naz",
+              "name": "projTitle",
+              "fill": "#00d9ff",
+              "content": "Featured Projects",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "inOqn",
+              "name": "proj1",
+              "width": 1280,
+              "height": 200,
+              "fill": "#1a2332",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CyMrM",
+                  "name": "p1Title",
+                  "fill": "#00d9ff",
+                  "content": "E-commerce Platform",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "nuvmG",
+                  "name": "p1Desc",
+                  "fill": "#cbd5e1",
+                  "content": "Full-stack React & Node.js app with MongoDB. View: https://github.com/ahmed/ecommerce",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "oIFYN",
+              "name": "proj2",
+              "width": 1280,
+              "height": 200,
+              "fill": "#1a2332",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "X5j1U",
+                  "name": "p2Title",
+                  "fill": "#00d9ff",
+                  "content": "DevOps Automation",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "2NTow",
+                  "name": "p2Desc",
+                  "fill": "#cbd5e1",
+                  "content": "CI/CD pipeline with Docker & Kubernetes. GitHub: https://github.com/ahmed/devops",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "r6yn1",
+              "name": "proj3",
+              "width": 1280,
+              "height": 200,
+              "fill": "#1a2332",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VZA9P",
+                  "name": "p3Title",
+                  "fill": "#00d9ff",
+                  "content": "Next.js Template",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "T8oNa",
+                  "name": "p3Desc",
+                  "fill": "#cbd5e1",
+                  "content": "Modern Next.js with TypeScript & Tailwind. GitHub: https://github.com/ahmed/nextjs",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QA2wF",
+              "name": "proj4",
+              "width": 1280,
+              "height": 200,
+              "fill": "#1a2332",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "5XWrK",
+                  "name": "p4Title",
+                  "fill": "#00d9ff",
+                  "content": "MERN Application",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "SpFaV",
+                  "name": "p4Desc",
+                  "fill": "#cbd5e1",
+                  "content": "Full-stack MERN with React Hooks. GitHub: https://github.com/ahmed/mern-app",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cv0t1",
+          "name": "Contact",
+          "width": 1440,
+          "height": 300,
+          "fill": "#0f172a",
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "G1AmF",
+              "name": "contactTitle",
+              "fill": "#00d9ff",
+              "content": "Get In Touch",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "zpp1q",
+              "name": "contactDesc",
+              "fill": "#cbd5e1",
+              "content": "Ready to build something amazing? Let's connect and create together.",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "LbQxH",
+              "name": "contactBtn",
+              "width": 140,
+              "height": 50,
+              "fill": "#00d9ff",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "zUND4",
+                  "name": "btnText",
+                  "fill": "#0f172a",
+                  "content": "Contact Me",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jG2aH",
+          "name": "Footer",
+          "width": 1440,
+          "height": 100,
+          "fill": "#0a0f1a",
+          "gap": 100,
+          "children": [
+            {
+              "type": "text",
+              "id": "e6Jkz",
+              "name": "footerCopy",
+              "fill": "#64748b",
+              "content": "© 2024 Ahmed. All rights reserved.",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "mib1h",
+              "name": "footerSocial",
+              "width": 200,
+              "height": 40,
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "x5XAg",
+                  "name": "social1",
+                  "fill": "#64748b",
+                  "content": "GitHub",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "3S8lL",
+                  "name": "social2",
+                  "fill": "#64748b",
+                  "content": "LinkedIn",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "YMrzv",
+                  "name": "social3",
+                  "fill": "#64748b",
+                  "content": "Twitter",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
