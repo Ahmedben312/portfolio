@@ -40,8 +40,8 @@ export const profile = {
   role: "Full-Stack Developer and DevOps Engineer",
   tagline:
     "I build production-ready products end-to-end: accessible interfaces, reliable APIs, and cloud infrastructure that scales.",
-  location: "Tunis, Tunisia",
-  email: "ahmed@email.com",
+  location: "Sfax, Tunisia",
+  email: "benamarahmed470@gmail.com",
 };
 
 export const navLinks: NavLink[] = [
@@ -60,8 +60,8 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const stats = [
-  { value: "5+", label: "Years shipping products" },
-  { value: "20+", label: "Projects delivered" },
+  { value: "3+", label: "Years shipping products" },
+  { value: "10+", label: "Projects delivered" },
   { value: "99.9%", label: "Uptime focus" },
   { value: "<24h", label: "Average response time" },
 ];
@@ -95,13 +95,7 @@ export const skillGroups: SkillGroup[] = [
     title: "Platform and Delivery",
     description:
       "Automated deployments with observability, reproducible infrastructure, and rollback safety.",
-    tools: [
-      "Docker",
-      "Kubernetes",
-      "GitHub Actions",
-      "AWS",
-      "Terraform",
-    ],
+    tools: ["Docker", "Kubernetes", "GitHub Actions", "AWS", "Terraform"],
   },
 ];
 
@@ -316,4 +310,3 @@ export const featuredProjects = [
   projectsByCategory.devops[0],
   projectsByCategory.mern[0],
 ];
-
