@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ahmed Portfolio (Next.js + Vercel)
 
-## Getting Started
+A modern portfolio website built with Next.js App Router and Tailwind CSS.
 
-First, run the development server:
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit portfolio content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All portfolio data is centralized in:
 
-## Learn More
+- `src/data/portfolio.ts`
 
-To learn more about Next.js, take a look at the following resources:
+Update profile details, links, project cards, and skill sections there.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO and routing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Global metadata: `src/app/layout.tsx`
+- Sitemap: `src/app/sitemap.ts`
+- Robots: `src/app/robots.ts`
+- Web manifest: `src/app/manifest.ts`
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repository to GitHub.
+2. Import the repo in Vercel.
+3. Set `NEXT_PUBLIC_SITE_URL` in Vercel to your production URL (for canonical and sitemap URLs).
+4. Deploy.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Available scripts
+
+- `npm run dev` - start local dev server
+- `npm run build` - create production build
+- `npm run start` - start production server
+- `npm run lint` - run ESLint

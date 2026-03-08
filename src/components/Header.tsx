@@ -1,84 +1,64 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { navLinks, profile } from "@/data/portfolio";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname.startsWith(href);
+  };
 
   return (
-    <header
-      style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #e5e7eb" }}
-      className="sticky top-0 z-50 shadow-sm"
-    >
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="text-2xl font-bold"
-          style={{ color: "#6366f1" }}
+          className="text-lg font-semibold tracking-tight text-slate-100 transition hover:text-cyan-300"
         >
-          Ahmed
+          {profile.name}
         </Link>
 
         <button
-          className="md:hidden flex flex-col gap-1"
+          type="button"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-slate-100 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          <span
-            className="w-6 h-0.5"
-            style={{ backgroundColor: "#374151" }}
-          ></span>
-          <span
-            className="w-6 h-0.5"
-            style={{ backgroundColor: "#374151" }}
-          ></span>
-          <span
-            className="w-6 h-0.5"
-            style={{ backgroundColor: "#374151" }}
-          ></span>
+          <span className="sr-only">Toggle menu</span>
+          <span className="text-xl leading-none">{isOpen ? "x" : "+"}</span>
         </button>
 
         <div
+          id="mobile-navigation"
           className={`${
             isOpen ? "flex" : "hidden"
-          } md:flex absolute md:relative top-full md:top-auto left-0 md:left-auto right-0 md:right-auto flex-col md:flex-row gap-6 bg-white md:bg-transparent p-6 md:p-0 w-full md:w-auto shadow-md md:shadow-none border-b md:border-b-0 border-gray-100`}
+          } absolute left-0 top-full w-full flex-col gap-4 border-b border-white/10 bg-slate-950/95 px-6 py-6 md:static md:flex md:w-auto md:flex-row md:items-center md:gap-2 md:border-0 md:bg-transparent md:p-0`}
         >
-          <Link
-            href="/frontend"
-            style={{ color: "#374151" }}
-            className="hover:text-opacity-80 transition font-medium"
-          >
-            Frontend
-          </Link>
-          <Link
-            href="/backend"
-            style={{ color: "#374151" }}
-            className="hover:text-opacity-80 transition font-medium"
-          >
-            Backend
-          </Link>
-          <Link
-            href="/devops"
-            style={{ color: "#374151" }}
-            className="hover:text-opacity-80 transition font-medium"
-          >
-            DevOps
-          </Link>
-          <Link
-            href="/mern"
-            style={{ color: "#374151" }}
-            className="hover:text-opacity-80 transition font-medium"
-          >
-            MERN
-          </Link>
-          <Link
-            href="/contact"
-            style={{ color: "#6366f1" }}
-            className="font-semibold transition"
-          >
-            Contact
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className={`rounded-md px-3 py-2 text-sm font-medium tracking-wide transition ${
+                isActive(link.href)
+                  ? "bg-cyan-400/15 text-cyan-300"
+                  : "text-slate-200 hover:bg-white/5 hover:text-cyan-300"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </header>

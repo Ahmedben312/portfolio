@@ -1,213 +1,220 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  categories,
+  featuredProjects,
+  processSteps,
+  profile,
+  skillGroups,
+  stats,
+} from "@/data/portfolio";
+
+export const metadata: Metadata = {
+  title: "Ahmed | Portfolio",
+  description:
+    "Portfolio homepage for Ahmed, a full-stack developer and DevOps engineer shipping reliable web products.",
+};
 
 export default function Home() {
+  const categoryItems = Object.values(categories);
+
   return (
-    <div className="w-full">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 py-32 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1
-            className="text-6xl md:text-8xl font-bold mb-8"
-            style={{ color: "#6366f1" }}
-          >
-            Hi, I&apos;m Ahmed
-          </h1>
-          <h2
-            className="text-3xl md:text-5xl font-semibold mb-8"
-            style={{ color: "#374151" }}
-          >
-            Full-Stack Developer & DevOps Engineer
+    <div className="relative overflow-hidden bg-slate-950 text-slate-100">
+      <div className="absolute inset-x-0 top-0 h-[460px] bg-[radial-gradient(circle_at_top,#0e749050,transparent_68%)]" />
+      <div className="absolute right-0 top-56 h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="absolute left-0 top-[42rem] h-80 w-80 rounded-full bg-amber-300/10 blur-3xl" />
+
+      <section className="relative mx-auto w-full max-w-6xl px-6 pb-16 pt-20 md:pt-24">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-200">
+              Available for freelance and full-time roles
+            </p>
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
+              {profile.name}
+              <span className="block text-cyan-300">{profile.role}</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
+              {profile.tagline}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="rounded-lg bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+              >
+                Work With Me
+              </Link>
+              <Link
+                href="/frontend"
+                className="rounded-lg border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-300/50 hover:text-cyan-300"
+              >
+                Explore Projects
+              </Link>
+            </div>
+          </div>
+
+          <aside className="rounded-2xl border border-white/10 bg-slate-900/70 p-7">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              Snapshot
+            </h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-xl border border-white/10 bg-white/5 p-4"
+                >
+                  <p className="text-2xl font-semibold text-slate-50">{stat.value}</p>
+                  <p className="mt-1 text-sm text-slate-300">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-sm text-slate-400">
+              Based in {profile.location}. Open to remote collaboration across product, platform, and infrastructure work.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section className="relative mx-auto w-full max-w-6xl px-6 py-14">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            Core Expertise
           </h2>
-          <p
-            className="text-xl mb-12 max-w-3xl mx-auto"
-            style={{ color: "#6b7280" }}
+          <Link
+            href="/contact"
+            className="text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
           >
-            Building modern web applications with MERN stack, TypeScript, and
-            Next.js. Deploying and scaling with Docker, Kubernetes, and AWS.
-          </p>
-          <div className="flex gap-6 justify-center flex-wrap">
-            <Link
-              href="/frontend"
-              className="px-10 py-4 rounded-lg font-semibold transition hover:shadow-lg text-lg"
-              style={{ backgroundColor: "#6366f1", color: "#ffffff" }}
+            Discuss a project {"->"}
+          </Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {skillGroups.map((group) => (
+            <article
+              key={group.title}
+              className="rounded-2xl border border-white/10 bg-slate-900/65 p-6"
             >
-              View Projects
+              <h3 className="text-xl font-semibold text-slate-100">{group.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{group.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {group.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative mx-auto w-full max-w-6xl px-6 py-14">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+          Project Domains
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
+          Choose a domain to see detailed project outcomes, architecture decisions, and implementation stacks.
+        </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {categoryItems.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/${category.slug}`}
+              className="group rounded-2xl border border-white/10 bg-slate-900/70 p-7 transition hover:border-cyan-300/45 hover:bg-slate-900"
+            >
+              <p className="text-xs uppercase tracking-[0.22em] text-cyan-300">
+                {category.label}
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold text-slate-50">
+                {category.strapline}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">
+                {category.description}
+              </p>
+              <p className="mt-4 text-sm font-semibold text-cyan-300">
+                Open category {"->"}
+              </p>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative mx-auto w-full max-w-6xl px-6 py-14">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+          Featured Work
+        </h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {featuredProjects.map((project) => (
+            <article
+              key={project.id}
+              className="rounded-2xl border border-white/10 bg-slate-900/60 p-7"
+            >
+              <h3 className="text-2xl font-semibold text-slate-50">{project.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{project.summary}</p>
+              <p className="mt-4 rounded-lg border border-cyan-400/30 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-100">
+                {project.impact}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.stack.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative mx-auto w-full max-w-6xl px-6 py-14">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+          How I Work
+        </h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {processSteps.map((step, index) => (
+            <article
+              key={step.title}
+              className="rounded-2xl border border-white/10 bg-slate-900/70 p-6"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
+                Step 0{index + 1}
+              </p>
+              <h3 className="mt-3 text-xl font-semibold text-slate-50">{step.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-8">
+        <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-cyan-500/20 via-sky-500/10 to-amber-300/20 p-8 md:p-10">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
+            Ready to upgrade your product or platform?
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-200">
+            I can help you ship faster with robust architecture, smooth user experiences, and a reliable deployment workflow.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="px-10 py-4 border-2 rounded-lg font-semibold transition hover:bg-indigo-50 text-lg"
-              style={{ borderColor: "#6366f1", color: "#6366f1" }}
+              className="rounded-lg bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
-              Get In Touch
+              Contact Me
+            </Link>
+            <Link
+              href="/backend"
+              className="rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-300/50 hover:text-cyan-300"
+            >
+              Review Backend Work
             </Link>
           </div>
         </div>
       </section>
-
-      {/* About Section */}
-      <section className="py-32 px-6 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-5xl font-bold mb-12" style={{ color: "#6366f1" }}>
-            About Me
-          </h2>
-          <div className="space-y-8">
-            <p
-              className="text-xl leading-relaxed"
-            style={{ color: "#374151" }}
-          >
-                I&apos;m a full-stack developer with 5+ years of experience building
-                scalable web applications. I specialize in the MERN stack (MongoDB,
-                Express, React, Node.js), TypeScript, and modern frameworks like
-                Next.js.
-              </p>
-              <p
-                className="text-xl leading-relaxed"
-                style={{ color: "#374151" }}
-              >
-                My expertise spans frontend architecture with React and Next.js,
-                backend API development with Node.js and Express, and comprehensive
-                DevOps solutions using Docker, Kubernetes, and AWS.
-              </p>
-              <p className="text-xl leading-relaxed" style={{ color: "#374151" }}>
-                I&apos;m passionate about clean code, testing, continuous
-                improvement, and delivering high-quality solutions that solve
-                real-world problems.
-              </p>
-            </div>
-          </div>
-        </section>
-
-      {/* Skills Section */}
-      <section className="py-32 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-16" style={{ color: "#6366f1" }}>
-            Skills
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Frontend Skills */}
-            <div className="p-10 rounded-2xl shadow-sm hover:shadow-lg transition bg-white border border-gray-200">
-              <div className="text-6xl mb-6">⚛️</div>
-              <h3
-                className="text-2xl font-bold mb-6"
-                style={{ color: "#6366f1" }}
-              >
-                  Frontend
-                </h3>
-                <p className="text-lg leading-relaxed" style={{ color: "#6b7280" }}>
-                  React, Next.js, TypeScript, Tailwind CSS, Responsive Design,
-                  State Management (Redux/Context)
-                </p>
-              </div>
-              {/* Backend Skills */}
-              <div className="p-10 rounded-2xl shadow-sm hover:shadow-lg transition bg-white border border-gray-200">
-                <div className="text-6xl mb-6">🚀</div>
-                <h3
-                  className="text-2xl font-bold mb-6"
-                style={{ color: "#6366f1" }}
-              >
-                  Backend
-                </h3>
-                <p className="text-lg leading-relaxed" style={{ color: "#6b7280" }}>
-                  Node.js, Express, MongoDB, PostgreSQL, REST APIs, Authentication
-                  & Authorization
-                </p>
-              </div>
-              {/* DevOps Skills */}
-              <div className="p-10 rounded-2xl shadow-sm hover:shadow-lg transition bg-white border border-gray-200">
-                <div className="text-6xl mb-6">⚙️</div>
-                <h3
-                  className="text-2xl font-bold mb-6"
-                style={{ color: "#6366f1" }}
-              >
-                  DevOps
-                </h3>
-                <p className="text-lg leading-relaxed" style={{ color: "#6b7280" }}>
-                  Docker, Kubernetes, CI/CD (GitHub Actions), AWS (EC2, S3, RDS),
-                  Linux
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      {/* Projects Preview */}
-      <section className="py-32 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-16" style={{ color: "#6366f1" }}>
-              Featured Projects
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <Link href="/frontend" className="group">
-                <div className="p-10 rounded-2xl h-full transition duration-300 cursor-pointer border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:border-indigo-300 bg-white group-hover:bg-indigo-50">
-                  <div className="text-6xl mb-6">⚛️</div>
-                  <h3
-                    className="text-3xl font-bold mb-4"
-                  style={{ color: "#6366f1" }}
-                >
-                    Frontend Projects
-                  </h3>
-                  <p className="text-lg mb-6" style={{ color: "#374151" }}>
-                    React and Next.js applications with modern UI/UX design
-                  </p>
-                  <p className="text-lg font-semibold" style={{ color: "#9ca3af" }}>
-                    Click to view →
-                  </p>
-                </div>
-              </Link>
-              <Link href="/backend" className="group">
-                <div className="p-10 rounded-2xl h-full transition duration-300 cursor-pointer border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:border-indigo-300 bg-white group-hover:bg-indigo-50">
-                  <div className="text-6xl mb-6">🚀</div>
-                  <h3
-                    className="text-3xl font-bold mb-4"
-                  style={{ color: "#6366f1" }}
-                >
-                    Backend Projects
-                  </h3>
-                  <p className="text-lg mb-6" style={{ color: "#374151" }}>
-                    Node.js and Express APIs with database integration
-                  </p>
-                  <p className="text-lg font-semibold" style={{ color: "#9ca3af" }}>
-                    Click to view →
-                  </p>
-                </div>
-              </Link>
-              <Link href="/devops" className="group">
-                <div className="p-10 rounded-2xl h-full transition duration-300 cursor-pointer border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:border-indigo-300 bg-white group-hover:bg-indigo-50">
-                  <div className="text-6xl mb-6">⚙️</div>
-                  <h3
-                    className="text-3xl font-bold mb-4"
-                  style={{ color: "#6366f1" }}
-                >
-                    DevOps Projects
-                  </h3>
-                  <p className="text-lg mb-6" style={{ color: "#374151" }}>
-                    Docker, Kubernetes, and CI/CD pipeline automation
-                  </p>
-                  <p className="text-lg font-semibold" style={{ color: "#9ca3af" }}>
-                    Click to view →
-                  </p>
-                </div>
-              </Link>
-              <Link href="/mern" className="group">
-                <div className="p-10 rounded-2xl h-full transition duration-300 cursor-pointer border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:border-indigo-300 bg-white group-hover:bg-indigo-50">
-                  <div className="text-6xl mb-6">🔗</div>
-                  <h3
-                    className="text-3xl font-bold mb-4"
-                    style={{ color: "#6366f1" }}
-                  >
-                    MERN Applications
-                  </h3>
-                  <p className="text-lg mb-6" style={{ color: "#374151" }}>
-                    Full-stack applications with MongoDB, Express, React, and Node.js
-                  </p>
-                  <p className="text-lg font-semibold" style={{ color: "#9ca3af" }}>
-                    Click to view →
-                  </p>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
-  }
+    </div>
+  );
+}
